@@ -269,6 +269,44 @@
         grid-template-columns: 345px;
         grid-template-rows: 65px 65px 50px 65px;
     }
+
+    #form-name-success {
+        display: none;
+        position: absolute;
+        font-size: 12px;
+        top: 23px;
+        left: 315px;
+    }
+    
+    #form-name-dangerous {
+        display: none;
+        position: absolute;
+        font-size: 12px;
+        top: 23px;
+        left: 315px;
+    }    
+
+    #form-number-success {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+    }
+    
+    #form-number-dangerous {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+    }
+
+    .form-error:nth-of-type(2) {
+        position: absolute;
+        color: var(--dangerous);
+        font-size: 12px;
+        top: 160px;
+        right: 160px;
+    }
 }
 
 @media(max-width: 320px) {
