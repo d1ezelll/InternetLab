@@ -1,0 +1,314 @@
+@import url(./style.css);
+
+@media(max-width: 768px) {
+    .header-burger-menu{
+        display: block;
+    }
+
+    .header-menu{
+        position: absolute;
+        right: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--custom-white);
+        padding: 75px 0 0 0;
+        transition: transform .5s;
+        color: var(--custom-black);
+    }
+
+    .header-burger-menu span {
+        background-color: var(--custom-black);
+        z-index: 3;
+    }
+
+    .header-nav{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: left;
+        color: var(--custom-black);
+        padding: 0 20px 0 10px;
+    }
+
+    .header-nav hr {
+        display: block;
+
+    }
+
+    .header-nav-item {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-nav-item-arrow {
+        height: 10px;
+        width: 10px;
+        display: block;
+        border-top: 2px solid var(--custom-gray);
+        border-right: 2px solid var(--custom-gray);
+        transform: rotate(45deg);
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .header-nav-item-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        cursor: pointer;
+        color: var(--custom-gray);
+    }
+
+    .header.open .header-menu{
+        transform: translateX(-100%);
+    }
+
+    .header-container {
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+    }
+      
+
+    .intro-title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .intro-subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 60px;
+    }
+    
+    .intro-button {
+        background: var(--custom-light-gray);
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--custom-black);
+        padding: 20px 40px 20px 40px;
+        border-radius: 4px;
+    }
+
+    .hit-top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 15px;
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+
+    .hit-top-picture {
+        width: 56px;
+        height: 56px;
+    }
+
+    .hit-top-item-title {
+        font-style: bold;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+    
+    .hit-top-item-subtitle {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        color: var(--custom-dark-gray);
+    }
+
+    .hit-bottom-title {
+        font-style: bold;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    .hit-bottom-leftside {
+        max-width: 352px;
+        max-height: 235px;
+    }
+   
+    .hit-bottom-rightside {
+        background-size: 351px;
+    }
+    
+    .hit-bottom-picture {
+        max-width: 351px;
+        max-height: 265px;
+    }
+
+    .feedback-slider-arrows {
+        display: none;
+    }
+
+    .feedback-item:nth-of-type(3) {
+        display: none;
+    }
+
+    .FAQ-grid {
+        max-width: 727px;
+    }
+
+    .review-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px 0 20px;
+    }
+
+    .footer-form-grid {
+        grid-template-columns: 352px 352px;
+        grid-template-rows: 65px 65px;
+    }
+}
+
+@media(max-width: 375px) {
+
+    .intro-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        margin-bottom: 30px;
+    }
+
+    .hit-title {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .hit-top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 15px;
+        row-gap: 15px;
+        margin-bottom: 50px;
+        justify-content: center;
+    }
+
+    .hit-top-item {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        max-width: 342px;
+        column-gap: 15px;
+    }
+
+    .hit-bottom {
+        display: grid;
+    }
+
+    .hit-bottom-title {
+        font-style: bold;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    .hit-bottom-leftside {
+        max-width: 352px;
+        max-height: 235px;
+        grid-row: 2/2;
+        text-align: center;
+    }
+   
+    .hit-bottom-rightside {
+        background-size: 342px;
+        grid-row: 1/1;
+    }
+    
+    .hit-bottom-picture {
+        max-width: 342px;
+        max-height: 258px;
+    }
+
+    .feedback-item:nth-of-type(2) {
+        display: none;
+    }
+
+    .FAQ-grid {
+        max-width: 343px;
+    }
+
+    .FAQ-question-text {
+        max-width: 299px;
+    }
+
+    /* .FAQ-question-button {
+        width: 24px;
+        height: 24px;
+    } */
+
+    .FAQ-answer {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+
+
+    .footer-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .footer-form-grid {
+        grid-template-columns: 345px;
+        grid-template-rows: 65px 65px 50px 65px;
+    }
+}
+
+@media(max-width: 320px) {
+
+    .hit-title {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .hit-top-item-text {
+        max-width: 216px;
+    }
+
+    .hit-bottom-leftside {
+        max-width: 288px;
+    }
+
+    .hit-bottom-rightside {
+        background-size: 288px;
+    }
+    
+    .hit-bottom-picture {
+        max-width: 288px;
+        max-height: 218px;
+    }
+
+    .FAQ-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .FAQ-grid {
+        max-width: 288px;
+    }
+
+    .FAQ-question-text {
+        max-width: 244px;
+    }
+
+    .footer-form-grid {
+        grid-template-columns: 288px;
+    }
+}
