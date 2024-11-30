@@ -37,6 +37,13 @@ const sliderNextBtn = document.querySelector('.feedback-slider-arrow-prev');
 const sliderPrevBtn = document.querySelector('.feedback-slider-arrow-next');
 const sliderDots = Array.from(document.querySelectorAll('.feedback-slider-dot'));
 
+let startX = 0;
+let startY = 0;
+let threshold = 125;
+let minSwipeTime = 125;
+let isSwiping = false;
+let startTime;
+
 function nextFeedbackSlide() {
     const firstItem = sliderItems.shift();
     sliderItems.push(firstItem);
@@ -48,8 +55,8 @@ function nextFeedbackSlide() {
         sliderDots[0].classList.add('active');
     } else {
         sliderDots[nextDot].classList.add('active');
-    }
-    
+    };
+
     
     renderSlider();
 }
@@ -79,6 +86,50 @@ function renderSlider() {
 
 sliderPrevBtn.addEventListener("click", nextFeedbackSlide);
 sliderNextBtn.addEventListener("click", prevFeedbackSlide);
+
+sliderGrid.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startTime = new Date().getTime();
+    isSwiping = true;
+}, false);
+
+sliderGrid.addEventListener('touchmove', function(e) {
+    if (!isSwiping) return;
+    endX = e.touches[0].clientX;
+}, false);
+
+sliderGrid.addEventListener('touchend', function(e) {
+    handleSwipeEnd(e.changedTouches[0]);
+});
+
+function handleSwipeEnd(point) {
+    var endTime = new Date().getTime();
+    var timeDiff = endTime - startTime;
+    var distanceY = Math.abs(startY - point.clientY);
+
+    if (!isSwiping || timeDiff < minSwipeTime || distanceY > 50) {
+        isSwiping = false;
+        return;
+    }
+
+    var distance = endX - startX;
+    var isSwipe = Math.abs(distance) > threshold;
+
+    if (isSwipe) {
+        if (distance > 0) {
+            prevFeedbackSlide();
+        } else {
+            nextFeedbackSlide();
+        }
+    }
+
+    startX = 0;
+    endX = 0;
+    isSwiping = false;
+}
+
+renderSlider();
 
 // Slider Feedback //
 
